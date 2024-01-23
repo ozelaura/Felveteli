@@ -29,9 +29,11 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="0"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtOMazonosito"
+                 Margin="20"
                  Grid.Row="0"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
 
         <Label Content="Név:"
                VerticalAlignment="Center"
@@ -39,9 +41,11 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="1"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtNeve"
+                 Margin="20"
                  Grid.Row="1"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
         
         <Label Content="Értesítési cím:"
                VerticalAlignment="Center"
@@ -49,9 +53,10 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="2"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtCim" Margin="20"
                  Grid.Row="2"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
 
         <Label Content="Születési dátum:"
                VerticalAlignment="Center"
@@ -59,19 +64,23 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="3"/>
-        <DatePicker Margin="20"
-                 Grid.Row="3"
-                 Grid.Column="1"/>
+        <DatePicker x:Name="txtSzuletesiDatum"
+                    Margin="20"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    VerticalContentAlignment="Center"/>
         
-        <Label Content="email cím:"
+        <Label Content="Email cím:"
                VerticalAlignment="Center"
                HorizontalAlignment="Right"
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="4"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtEmail"
+                 Margin="20"
                  Grid.Row="4"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
         
         <Label Content="Matek pontok:"
                VerticalAlignment="Center"
@@ -79,9 +88,11 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="5"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtMatematika"
+                 Margin="20"
                  Grid.Row="5"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
         
         <Label Content="Magyar pontok:"
                VerticalAlignment="Center"
@@ -89,9 +100,11 @@
                Margin="0 0 30 0"
                FontSize="25"
                Grid.Row="6"/>
-        <TextBox Margin="20"
+        <TextBox x:Name="txtMagyar"
+                 Margin="20"
                  Grid.Row="6"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
         
         <Label Content="Telefonszám:"
                VerticalAlignment="Center"
@@ -101,14 +114,18 @@
                Grid.Row="7"/>
         <TextBox Margin="20"
                  Grid.Row="7"
-                 Grid.Column="1"/>
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
 
         <Button Content="Rögzít"
+                x:Name="btnRogzit"
                 FontSize="25"
-                Margin="20"
+                Margin="18"
                 Grid.Row="8"
                 Grid.Column="0"
                 Grid.ColumnSpan="2" 
-                Width="300"/>
+                Width="300"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center" Click="btnRogzit_Click"/>
     </Grid>
 </Window>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oze.laura\\source\\repos\\Felveteli\\Felveteli\\Felveteli.csproj": {}
+    "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oze.laura\\source\\repos\\Felveteli\\Felveteli\\Felveteli.csproj": {
+    "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oze.laura\\source\\repos\\Felveteli\\Felveteli\\Felveteli.csproj",
+        "projectUniqueName": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj",
         "projectName": "Felveteli",
-        "projectPath": "C:\\Users\\oze.laura\\source\\repos\\Felveteli\\Felveteli\\Felveteli.csproj",
+        "projectPath": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj",
         "packagesPath": "C:\\Users\\oze.laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oze.laura\\source\\repos\\Felveteli\\Felveteli\\obj\\",
+        "outputPath": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oze.laura\\AppData\\Roaming\\NuGet\\NuGet.Config",
