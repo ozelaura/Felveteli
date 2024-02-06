@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniKifir</title>
+    <script src="felveteliV1.0.js" defer></script>
+    <link rel="stylesheet" href="felveteliV1.0.css">
+</head>
+<body>
+    <div id="nav">
+        <a id="pontOssz" href="/PontsszamOsszesitoV1.0/felveteliV1.0.html">Pontszám összesítő</a>
+        <a id="diakKer" href="/V1.0/diakKeresoV1.0.html">Diák kereső</a>
+    </div>
+
+    <div id="container">
+        <label id="pontszamOsszesito">Pontszám összesítő</label>
+        <div id="sort-mezo">
+            <label for="sort">Minimum pontszám:</label>
+            <input id="sort" type="number" min="0" max="100">
+            <button onclick="listaz()" type="button">Listáz</button>
+        </div>
+    
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>OM azonosító</th>
+                    <th>Név</th>
+                    <th>Matek pontszám</th>
+                    <th>Magyar pontszám</th>
+                    <th>Összesített Pontszám</th>
+                </tr>
+            </thead>
+            <tbody id="adatok">
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

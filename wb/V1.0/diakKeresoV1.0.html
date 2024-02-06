@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="scriptV2.0.js"></script>
-    <link rel="stylesheet" href="styleV2.0.css">
+    <script defer src="diakKeresoV1.0.js"></script>
+    <link rel="stylesheet" href="diakKeresoV1.0.css">
     <title>MiniKifir</title>
 </head>
 <body>
+    <div id="nav">
+        <a id="pontOssz" href="/PontsszamOsszesitoV1.0/felveteliV1.0.html">Pontszám összesítő</a>
+        <a id="diakKer" href="/V1.0/diakKeresoV1.0.html">Diák kereső</a>
+    </div>
     <div class="container">
         <legend class="minikifir-legend"> MiniKifir</legend>
         <form>
@@ -15,7 +19,7 @@
             <input type="text" id="OM_Azonosito" maxlength="11" placeholder="12312312312" required>
             <button type="button" id="keres" onclick="searchOM()">Keres</button>
         </form>
-        <p id="eredmeny"></p>
+        <div id="eredmeny"></div>
     </div>
 </body>
 </html>
