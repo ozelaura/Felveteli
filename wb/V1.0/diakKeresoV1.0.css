@@ -1,3 +1,19 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,1fr) ;
+    grid-column-gap: 0px;
+    grid-row-gap: 20px;
+}
+.div1{
+    grid-area: 1/1/2/6;
+}
+.div2{
+    grid-area: 2/2/6/5;
+}
+
+
+
 #nav{
     margin: auto;
     padding: 2em;
@@ -6,6 +22,10 @@
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+#nav a:hover{
+    background-color:#d6dcf1
+}
+
 a{
     text-decoration: none;
     color: #333;
