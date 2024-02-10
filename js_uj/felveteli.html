@@ -2,14 +2,12 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=+-, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felvételi</title>
     <script src="felveteli.js" defer></script>
     <link rel="stylesheet" href="felveteli.css">
 </head>
 <body>
-
-
     <div id="container">
         <label id="pontszamOsszesito">Pontszám összesítő</label>
         <div id="sort-mezo">
@@ -17,21 +15,21 @@
             <input id="sort" type="number" min="0" max="100">
             <button onclick="listaz()" type="button">Listáz</button>
         </div>
-    
+        
         <table id="tabla">
             <thead>
                 <tr>
-                    <th>OM azonosító</th>
-                    <th>Név</th>
-                    <th>Matek pontszám</th>
-                    <th>Magyar pontszám</th>
-                    <th>Összesített Pontszám</th>
+                    <th onclick="rendez('oma')">OM azonosító</th>
+                    <th onclick="rendez('nev')">Név</th>
+                    <th onclick="rendez('matek_pontszam')">Matek pontszám</th>
+                    <th onclick="rendez('magyar_pontszam')">Magyar pontszám</th>
+                    <th onclick="rendez('osszpontszam')">Összesített Pontszám</th>
                 </tr>
             </thead>
-            <tbody id="adatok">
-            </tbody>
+            <tbody id="adatok"></tbody>
         </table>
+
+        <button onclick="exportalas(undefined)" type="button">Exportálás</button>
     </div>
-    
 </body>
 </html>

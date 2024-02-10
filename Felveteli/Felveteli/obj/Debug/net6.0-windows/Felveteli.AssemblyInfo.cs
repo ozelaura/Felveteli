@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Felveteli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+604785905eeb4fc80cbfd1db0f0ae691cbda08d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Felveteli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Felveteli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

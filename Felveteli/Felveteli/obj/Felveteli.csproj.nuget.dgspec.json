@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj": {}
+    "D:\\Github\\Felveteli\\Felveteli\\Felveteli\\Felveteli.csproj": {}
   },
   "projects": {
-    "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj": {
+    "D:\\Github\\Felveteli\\Felveteli\\Felveteli\\Felveteli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj",
+        "projectUniqueName": "D:\\Github\\Felveteli\\Felveteli\\Felveteli\\Felveteli.csproj",
         "projectName": "Felveteli",
-        "projectPath": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\Felveteli.csproj",
-        "packagesPath": "C:\\Users\\oze.laura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oze.laura\\Desktop\\Felvételi\\Felveteli\\Felveteli\\obj\\",
+        "projectPath": "D:\\Github\\Felveteli\\Felveteli\\Felveteli\\Felveteli.csproj",
+        "packagesPath": "C:\\Users\\szabo\\.nuget\\packages\\",
+        "outputPath": "D:\\Github\\Felveteli\\Felveteli\\Felveteli\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\oze.laura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\szabo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

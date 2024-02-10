@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Felveteli
 {
@@ -20,7 +8,7 @@ namespace Felveteli
     /// </summary>
     public partial class MainWindow : Window
     {
-        Felvetelizo felvetelizoAdatai;
+        public Felvetelizo felvetelizo;
         public MainWindow()
         {
             InitializeComponent();
@@ -28,36 +16,57 @@ namespace Felveteli
 
         public MainWindow(Felvetelizo ujdiak) : this()
         {
-            this.felvetelizoAdatai = ujdiak;
+            this.felvetelizo = ujdiak;
 
-            this.Title = $"{felvetelizoAdatai.Neve} adataink rögzítése";
-            txtNeve.Text = felvetelizoAdatai.Neve;
+            this.Title = $"{felvetelizo.Nev} adataink rögzítése";
+            txtNeve.Text = felvetelizo.Nev;
         }
 
         private void btnRogzit_Click(object sender, RoutedEventArgs e)
         {
-            felvetelizoAdatai.OM_Azonosito = txtOMazonosito.Text;
-            felvetelizoAdatai.Neve = txtNeve.Text;
-            felvetelizoAdatai.EretesitesiCime = txtCim.Text;
-            felvetelizoAdatai.Email = txtEmail.Text;
-            felvetelizoAdatai.SzuletesiDatum = Convert.ToDateTime(txtSzuletesiDatum.Text);
+            string azonosito = txtOMazonosito.Text;
+            if (azonosito.Length != 11)
+            {
+                MessageBox.Show("Nem megfelelő OM azonosító!");
+                return;
+            }
+
+            // Minden karakter szám
+            if (true) {}
+
+            felvetelizo.OM_Azonosito = azonosito;
+
+            string nev = txtNeve.Text;
+            if (nev.)
+            {
+                
+            }
+            felvetelizo.Nev = nev;
+
+            felvetelizo.ErtesitesiCim = txtCim.Text;
+
+
+
+
+            felvetelizo.Email = txtEmail.Text;
+            felvetelizo.SzuletesiDatum = Convert.ToDateTime(txtSzuletesiDatum.Text);
 
             try
             {
-                this.felvetelizoAdatai.Matematika = int.Parse(txtMatematika.Text);
+                this.felvetelizo.MatekPontok = int.Parse(txtMatematika.Text);
             }
             catch (Exception)
             {
                 MessageBox.Show("Nem számformátum!");
                 return;
             }
-            if (felvetelizoAdatai.Matematika < 0 || felvetelizoAdatai > 50)
+            if (felvetelizo.Matematika < 0 || felvetelizo > 50)
             {
                 MessageBox.Show("Nem lehet ennyi pontja!");
                 return;
             }
 
-            this.felvetelizoAdatai.Magyar = int.Parse(txtMagyar.Text);
+            this.felvetelizo.MagyarPontok = int.Parse(txtMagyar.Text);
             Close();
         }
     }

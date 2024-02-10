@@ -181,18 +181,8 @@ const adatok = [
   }
 ]
 
-function listaz(){
-  // Összpontszám minimumának beolvasása
-  let minimumPontszam = parseInt(document.getElementById("sort").value);
-  // Ellenőrzés, hogy a minimum pontszám nem lehet negatív vagy 100-nál nagyobb
-  if (minimumPontszam < 0) {
-      alert("Nem lehet mínusz szám!")
-      return;
-  } else if (minimumPontszam > 100) {
-      alert("Nem lehet 100-nál nagyobb szám!")
-      return;
-  }
-
+// Táblázat kitöltése
+function tablazat_kitoltese(diakok) {
   // Táblázat testének kiválasztása
   let tableBody = document.getElementById("adatok");
 
@@ -200,16 +190,13 @@ function listaz(){
   tableBody.innerHTML = "";
 
   // Adatok végigolvasása és szűrése összpontszám alapján
-  adatok.forEach(function(student) {
-    // Ellenőrzés, hogy a minimum pontszámnál nagyobb-e, hogy feleslegesen ne jelenjenek meg a sorok
-    let osszPontszam = student.Matematika + student.Magyar;
-
-    if (osszPontszam < minimumPontszam) {
-      return;
-    }
-
+  diakok.forEach(function(diak) {
     // Sor létrehozása
     var row = tableBody.insertRow();
+
+    row.addEventListener('click', () => {
+      exportalas(diak);
+    });
     
     // Cellák létrehozása
     var cell1 = row.insertCell(0);
@@ -219,10 +206,107 @@ function listaz(){
     var cell5 = row.insertCell(4);
 
     // Adatok táblázatba írása
-    cell1.innerHTML = student.OM_Azonosito;
-    cell2.innerHTML = student.Neve;
-    cell3.innerHTML = student.Matematika;
-    cell4.innerHTML = student.Magyar;
-    cell5.innerHTML = osszPontszam;
+    cell1.innerHTML = diak.OM_Azonosito;
+    cell2.innerHTML = diak.Neve;
+    cell3.innerHTML = diak.Matematika;
+    cell4.innerHTML = diak.Magyar;
+    cell5.innerHTML = (diak.Matematika + diak.Magyar);
   });
+}
+
+// Összpontszám minimumának beolvasása illetve ellenőrzése
+function minimumPontEllenorzes(params) {
+    // Összpontszám minimumának beolvasása
+    let minimumPontszam = parseInt(document.getElementById("sort").value);
+    // Ellenőrzés, hogy a minimum pontszám nem lehet negatív vagy 100-nál nagyobb
+    if (minimumPontszam < 0) {
+        alert("Nem lehet mínusz szám!")
+        return;
+    } else if (minimumPontszam > 100) {
+        alert("Nem lehet 100-nál nagyobb szám!")
+        return;
+    }
+
+    return minimumPontszam;
+}
+
+// Összpontszám ellenőrzése
+// Majd a táblázat kitöltése
+function listaz(){
+  let minPont = minimumPontEllenorzes();
+
+  // Táblázat kitöltése
+  tablazat_kitoltese(adatok.filter(diak => diak.Matematika + diak.Magyar >= minPont));
+}
+
+// Rendezés
+// params: rendezési szempont
+// 'oma' - OM azonosító szerint
+// 'nev' - név szerint
+// 'matek_pontszam' - matematika pontszám szerint
+// 'magyar_pontszam' - magyar pontszám szerint
+// 'osszpontszam' - összpontszám szerint
+// A rendezési szempontnak megfelelően rendezze a diákokat és töltse ki a táblázatot
+function rendez(params) {
+
+  let minPont = minimumPontEllenorzes();
+
+  let diakok = adatok.filter(diak => diak.Matematika + diak.Magyar >= minPont);
+
+  switch (params) {
+    case 'oma':
+      diakok.sort((a, b) => a.OM_Azonosito.localeCompare(b.OM_Azonosito));
+      break;
+    case 'nev':
+      diakok.sort((a, b) => a.Neve.localeCompare(b.Neve));
+      break;
+    case 'matek_pontszam':
+      diakok.sort((a, b) => a.Matematika - b.Matematika);
+      break;
+    case 'magyar_pontszam':
+      diakok.sort((a, b) => a.Magyar - b.Magyar);
+      break;
+    case 'osszpontszam':
+      diakok.sort((a, b) => (a.Matematika + a.Magyar) - (b.Matematika + b.Magyar));
+      break;
+    default:
+      break;
+  }
+
+  tablazat_kitoltese(diakok);
+}
+
+// Adatok exportálása CSV fájlba
+function exportalas(diak) {
+
+  let csv = "OM_Azonosito,Neve,ErtesitesiCime,Email,SzuletesiDatum,Matematika,Magyar\n";
+
+  if (diak != undefined) {
+    csv += diak2CSV(diak);
+  } else {
+    let minPont = minimumPontEllenorzes();
+
+    let diakok = adatok.filter(diak => diak.Matematika + diak.Magyar >= minPont);
+
+    diakok.forEach(function(diak) {
+      csv += diak2CSV(diak);
+    });
+  }
+
+  
+
+   
+  
+  
+
+  let hiddenElement = document.createElement('a');
+  hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+  hiddenElement.target = '_blank';
+  hiddenElement.download = 'felveteli.csv';
+  hiddenElement.click();
+}
+
+// Diák objektum CSV sorává alakítása
+function diak2CSV(diak) {
+  return diak.OM_Azonosito + "," + diak.Neve + "," + diak.ErtesitesiCime + "," + diak.Email + "," + diak.SzuletesiDatum + "," + diak.Matematika + "," + diak.Magyar + "\n";
 }
