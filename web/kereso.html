@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>MiniKifir</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="kereso.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">MiniKifir</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="felveteli.html">Táblázat</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="kereso.html">Kereső</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+      <legend class="minikifir-legend"> MiniKifir</legend>
+      <form>
+          <label for="OM_Azonosito">OM Azonosító: </label>
+          <input type="text" id="OM_Azonosito" maxlength="11" placeholder="12312312312" required>
+          <button type="button" id="keres" onclick="searchOM()">Keres</button>
+      </form>
+      <p id="eredmeny"></p>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="kereso.js"></script>
+</html>

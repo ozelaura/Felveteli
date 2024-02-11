@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniKifir</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="felveteli.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">MiniKifir</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="felveteli.html">Táblázat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kereso.html">Kereső</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <label id="pontszamOsszesito">Pontszám összesítő</label>
+        <div id="sort-mezo">
+            <label for="sort">Minimum pontszám:</label>
+            <input id="sort" type="number" min="0" max="100">
+            <button onclick="listaz()" type="button">Listáz</button>
+        </div>
+        
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th onclick="rendez('oma')">OM azonosító</th>
+                    <th onclick="rendez('nev')">Név</th>
+                    <th onclick="rendez('matek_pontszam')">Matek pontszám</th>
+                    <th onclick="rendez('magyar_pontszam')">Magyar pontszám</th>
+                    <th onclick="rendez('osszpontszam')">Összesített Pontszám</th>
+                </tr>
+            </thead>
+            <tbody id="adatok"></tbody>
+        </table>
+
+        <button onclick="exportalas(undefined)" type="button">Exportálás</button>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="felveteli.js"></script>
+</html>
