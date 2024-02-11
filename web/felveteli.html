@@ -36,18 +36,21 @@
             <button onclick="listaz()" type="button">Listáz</button>
         </div>
         
-        <table id="tabla">
-            <thead>
-                <tr>
-                    <th onclick="rendez('oma')">OM azonosító</th>
-                    <th onclick="rendez('nev')">Név</th>
-                    <th onclick="rendez('matek_pontszam')">Matek pontszám</th>
-                    <th onclick="rendez('magyar_pontszam')">Magyar pontszám</th>
-                    <th onclick="rendez('osszpontszam')">Összesített Pontszám</th>
-                </tr>
-            </thead>
-            <tbody id="adatok"></tbody>
-        </table>
+        <div class="table-responsive">
+          <table id="tabla" class="table">
+              <thead>
+                  <tr>
+                      <th onclick="rendez('oma')">OM azonosító</th>
+                      <th onclick="rendez('nev')">Név</th>
+                      <th onclick="rendez('matek_pontszam')">Matek pontszám</th>
+                      <th onclick="rendez('magyar_pontszam')">Magyar pontszám</th>
+                      <th onclick="rendez('osszpontszam')">Összesített Pontszám</th>
+                  </tr>
+              </thead>
+              <tbody id="adatok"></tbody>
+          </table>
+      </div>
+      
 
         <button onclick="exportalas(undefined)" type="button">Exportálás</button>
     </div>
