@@ -218,6 +218,14 @@ function showResult(diakok) {
 
   let eredmenyek = '';
 
+  eredmenyek += `<h3>Találatok:</h3>
+    <p>Találatok száma: ${diakok.length}</p>
+    <p>Matematika átlag: ${diakok.reduce((acc, diak) => acc + diak.Matematika, 0) / diakok.length}</p>
+    <p>Magyar átlag: ${diakok.reduce((acc, diak) => acc + diak.Magyar, 0) / diakok.length}</p>
+    <p>Össz pont átlag: ${diakok.reduce((acc, diak) => acc + diak.Matematika + diak.Magyar, 0) / diakok.length}</p>
+    <br><br>
+  `;
+
   diakok.forEach(diak => {
 
     let diakDiv = document.createElement('div');
@@ -233,6 +241,8 @@ function showResult(diakok) {
       Össz pont: ${diak.Magyar + diak.Matematika}<br><br>
     `;
 
-    eredmeny.innerHTML += diakDiv.innerHTML;
+    eredmenyek += diakDiv.innerHTML;
   });
+
+  eredmeny.innerHTML = eredmenyek;
 }
