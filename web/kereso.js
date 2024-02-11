@@ -182,33 +182,57 @@ let Diakok = [
 ]
 function ervenyesOMAzon(OMazonosito) {
   const Szam = /^\d+$/.test(OMazonosito);
-  return OMazonosito.length === 11 && Szam;
+  return OMazonosito.length <= 11 && Szam;
 }
-function searchOM() {
-  const bekertOMazon = document.getElementById('OM_Azonosito');
-  const resultElement = document.getElementById('eredmeny');
 
-  // Get the OM identifier value
-  const OMazon = bekertOMazon.value.trim();
+function search() {
+  const nev = document.getElementById('Nev').value.trim();
+  const azonosito = document.getElementById('OM_Azonosito').value.trim();
 
-  // Validate the OM identifier
-  if (!ervenyesOMAzon(OMazon)) {
-      resultElement.innerHTML = '<p class="error">Error: Nem valós OM azonosító. Írjon be egy 11 számjegyből álló számot.<p>';
-      return;
-  }
+  let diakok = Diakok;
 
-  const foundData = Diakok.find(item => item.OM_Azonosito === OMazon);
+  // // Validate the OM identifier
+  // if (!ervenyesOMAzon(azonosito)) {
+  //   alert('Nem valós OM azonosító. Írjon be egy 11 számjegyből álló számot!');
+  //   return;
+  // }
 
-  if (foundData) {
-      resultElement.innerHTML = `
-          Név: ${foundData.Neve}<br>
-          OM azonosító: ${OMazon}<br>
-          Email: ${foundData.Email}<br>
-          Matek pont: ${foundData.Matematika}<br>
-          Magyar pont: ${foundData.Magyar}<br>
-          Össz pont: ${foundData.Magyar+foundData.Matematika}<br>
-      `;
-  } else {
-      resultElement.innerHTML = '<p class="error">Error: Nincs ilyen OM azonosító.<p>';
-  }
+  // const foundData = Diakok.find(item => item.OM_Azonosito === azonosito);
+  // if (!foundData) {
+  //   alert('Nincs ilyen OM azonosító!');
+  //   return;
+  // }
+
+  diakok = diakok.filter(diak => diak.OM_Azonosito.startsWith(azonosito));
+  diakok = diakok.filter(diak => diak.Neve.toLowerCase().includes(nev.toLowerCase()));
+
+  showResult(diakok);
+}
+
+
+function showResult(diakok) {
+  const eredmeny = document.getElementById('eredmeny');
+
+  // Eredmények törlése
+  eredmeny.innerHTML = '';
+
+  let eredmenyek = '';
+
+  diakok.forEach(diak => {
+
+    let diakDiv = document.createElement('div');
+
+    diakDiv.id = diak.OM_Azonosito;
+
+    diakDiv.innerHTML = `
+      Név: ${diak.Neve}<br>
+      OM azonosító: ${diak.OM_Azonosito}<br>
+      Email: ${diak.Email}<br>
+      Matek pont: ${diak.Matematika}<br>
+      Magyar pont: ${diak.Magyar}<br>
+      Össz pont: ${diak.Magyar + diak.Matematika}<br><br>
+    `;
+
+    eredmeny.innerHTML += diakDiv.innerHTML;
+  });
 }

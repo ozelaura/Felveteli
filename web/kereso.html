@@ -33,10 +33,12 @@
       <legend class="minikifir-legend"> MiniKifir</legend>
       <form>
           <label for="OM_Azonosito">OM Azonosító: </label>
-          <input type="text" id="OM_Azonosito" maxlength="11" placeholder="12312312312" required>
-          <button type="button" id="keres" onclick="searchOM()">Keres</button>
+          <input type="text" id="OM_Azonosito" maxlength="11" placeholder="12312312312" onchange="search()" oninput="search()" required>
+          <label for="Nev">Név: </label>
+          <input type="text" id="Nev" placeholder="Maller Laller" onchange="search()" oninput="search()" required>
+          <button type="button" id="keres" onclick="search()">Keres</button>
       </form>
-      <p id="eredmeny"></p>
+      <div id="eredmeny"></div>
     </div>
   </body>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
